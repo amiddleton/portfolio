@@ -7,7 +7,11 @@ Portfolio::Application.routes.draw do
   # GET :blog/new -> blog#new
   # POST :blog -> blog#create
   # DELETE :blog -> blog#destroy
-  resources :blog
+  resources :blog  do
+    collection do
+      post :create, as: 'create'
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
