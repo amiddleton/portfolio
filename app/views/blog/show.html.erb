@@ -3,6 +3,5 @@
   <%=  @post.content %>
 </div>
 <div class='post_footer'>
-  <%=  @post.created_at.strftime('%m/%d/%Y %H:%M') %> |
-  <%=  link_to "Edit", edit_blog_path(@post)  %>
+  <%=  @post.created_at.strftime('%m/%d/%Y %H:%M') %>
 </div>

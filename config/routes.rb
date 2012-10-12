@@ -1,17 +1,22 @@
 Portfolio::Application.routes.draw do
 
-  # GET :blog -> blog#index
-  # GET :blog/:id -> blog#show
-  # GET :blog/:id/edit -> blog#edit
-  # PUT :blog/:id -> blog#update
-  # GET :blog/new -> blog#new
-  # POST :blog -> blog#create
-  # DELETE :blog -> blog#destroy
-  resources :blog  do
-    collection do
-      post :create, as: 'create'
-    end
+  get "sessions/new"
+
+  get '/sign_up' => "users#new", :as => "signup"
+  resources :users, :only => [:create]
+
+  get '/log_in' => "sessions#new", :as => "log_in"
+  resources :sessions, :only => [:create]
+
+  resources :blog, :only => [:index, :show]
+
+  namespace :admin do 
+    resources :posts
   end
+
+  #match '/blog' => "posts#index", :as => "blog"
+  #match '/blog/:id' => "posts#show", :as => "blog_show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -61,7 +66,7 @@ Portfolio::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'blog#index'
 
   # See how all your routes lay out with "rake routes"
 
