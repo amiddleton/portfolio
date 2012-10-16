@@ -19,7 +19,7 @@ describe SessionsController do
 
 
     it { should redirect_to('/') }
-    it { should set_session(:user_id).to(@user.id) }
+    it { should set_session(:user_id).to(user.id) }
 
   end
 end
