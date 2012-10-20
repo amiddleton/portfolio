@@ -17,6 +17,7 @@ development:
   encoding: unicode
   database: portfolio_development
   pool: 5
+  host: localhost
   username: portfolio
   password:
 
@@ -43,6 +44,7 @@ test:
   encoding: unicode
   database: portfolio_test
   pool: 5
+  host: localhost
   username: portfolio
   password:
 

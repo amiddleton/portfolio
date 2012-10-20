@@ -1,9 +1,10 @@
 <h1>Projects</h1>
 <%= link_to "New Project", new_admin_project_path %>
 
-<table>
+<table class='table table-striped'>
   <thead>
     <tr>
+      <th class='span1'>Image</th>
       <th>Title</th>
       <th>Content</th>
     </tr>
@@ -11,10 +12,11 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
+        <td><%= image_tag project.image_url(:thumb).to_s %></td>
         <td><%= project.title %></td>
         <td>
-          <%= link_to "Edit", edit_admin_project_path(project) %> |
-          <%= link_to "Delete", admin_project_path(project), method: delete %>
+          <%= link_to "Edit", edit_admin_project_path(project), class: 'btn btn-primary' %>
+          <%= link_to "Delete", admin_project_path(project), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger' %>
         </td>
       </tr>
     <% end %>

@@ -1,2 +1,18 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<h1>Log In</h1>
+<%= form_tag sessions_path, html: { class: 'form-vertical'} do %>
+  <div class="control-group">
+    <%= label_tag :email, "Email", class: 'control-label' %>
+    <div class='controls'>
+      <%= text_field_tag :email, params[:email], class: 'span12' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= label_tag :password, "Password", class: 'control-label' %>
+    <div class='controls'>
+      <%= password_field_tag :password, '', class: 'span12' %>
+    </div>
+  </div>
+  <div class="form-actions span12">
+    <%= submit_tag "Log In", class: 'btn btn-primary' %>
+  </div>
+<% end %>

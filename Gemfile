@@ -7,6 +7,9 @@ gem 'rails', '3.2.8'
 
 gem 'pg'
 gem 'bcrypt-ruby', require: 'bcrypt'
+gem 'carrierwave'
+gem 'rmagick'
+
 
 
 # Gems used only for assets and not required
@@ -19,6 +22,9 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'bootstrap-sass'
+  gem 'bootstrap-rails'
+  gem 'bootswatch-rails'
 end
 
 gem 'jquery-rails'
@@ -31,6 +37,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rspec'
   gem 'terminal-notifier-guard'
+  gem 'hpricot'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
