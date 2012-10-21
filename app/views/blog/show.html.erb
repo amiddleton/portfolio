@@ -1,7 +1,15 @@
 <h1><%=  @post.title %></h1>
-<div class='post'>
-  <%=  @post.content %>
+<div class='row-fluid'>
+     <i class="icon-user"></i> Jim Ray
+     &nbsp;&nbsp;|&nbsp;&nbsp;
+     <i class="icon-calendar"></i> <%=  @post.created_at.strftime('%m/%d/%Y %H:%M') %>
+     &nbsp;&nbsp;|&nbsp;&nbsp;
+     <i class='icon-tags'></i> 
+     <%= link_to "Ruby", '#', class: 'label label-warning' %> 
+     <%= link_to "Ruby on Rails", '#', class: 'label label-warning' %> 
+     <%= link_to "Postgresql", '#', class: 'label label-warning' %>
 </div>
-<div class='post_footer'>
-  <%=  @post.created_at.strftime('%m/%d/%Y %H:%M') %>
+<br />
+<div class='row-fluid'>
+  <%=raw  @post.content %>
 </div>
