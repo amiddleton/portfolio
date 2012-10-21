@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :title, :content, :image
+  attr_accessible :title, :content, :image, :caption
 
   validates :title, :content, presence: true
 

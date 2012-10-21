@@ -1,0 +1,14 @@
+<h1>Projects</h1>
+<ul class='thumbnails'>
+  <% @projects.each do |project| %>
+    <li class='span3 thumbnail'>
+      <div style="text-align: center;">
+        <%= link_to image_tag(project.image_url(:mid), class: 'img-polaroid'), project_path(project) %>
+      </div>
+      <div class='caption'>
+        <h6><%= project.title %></h6>
+        <%= project.caption %>
+      </div>
+    </li>
+  <% end %>
+</ul>
